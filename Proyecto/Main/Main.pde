@@ -1,6 +1,7 @@
 Container objContainer;
 PShape rectangle;
 PImage backgroundSup, backgroundInf;
+ItemContainer item;
 void setup(){
   size(1190, 700, P2D);
   
@@ -15,9 +16,16 @@ void setup(){
 }
 
 void draw(){
-    
+  if(mousePressed && item != null){
+    item.repaint(mouseX, mouseY);
+    item.restart(mouseX, mouseY);
+  }
 }
 
 void mouseMoved() {
   objContainer.watchCursor();
+}
+
+void mousePressed(){
+  item = objContainer.watchPressedCursor();
 }

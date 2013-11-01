@@ -36,7 +36,15 @@ class ItemContainer{
     image(this.img, this.x, this.y);
   }
   
+  public void repaint(int x, int y){
+    image(this.img, x, y);
+  }
+  
   public void restart(){
     image(this.img_ori, this.x, this.y);
+  }
+  
+  public void restart(int x, int y){
+    image(this.img_ori, x, y);
   }
 }

@@ -54,4 +54,20 @@ class Container {
       }
     }
   }
+  
+  public ItemContainer watchPressedCursor(){
+    ItemContainer item = null;
+    
+    for(int i=0; i < num_items; i++){
+      ItemContainer objItem = this.objItems[i];
+      
+      if(mouseX >= objItem.getX() && mouseX <= (objItem.getX() + objItem.getWidth()) && mouseY >= objItem.getY() && mouseY <= (objItem.getY() + objItem.getWidth())){
+        item = objItem;
+        
+        break;
+      }
+    }
+    
+    return item;
+  }
 }
